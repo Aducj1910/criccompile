@@ -1,4 +1,4 @@
-import pymongo, json, unicodedata, json, accessDB
+import pymongo, json, unicodedata, json, accessDB, certifi
 from math import ceil
 from pymongo import MongoClient
 from openpyxl import load_workbook, Workbook
@@ -13,7 +13,7 @@ from openpyxl import load_workbook, Workbook
 # document.insert_one(post)
 
 # connection = MongoClient('localhost', 27017)
-connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', tlsCAFile=certifi.where())
 db = connection['cricmanagerrecent']
 
 def main(inforows, matchtracker, fmt):

@@ -1,0 +1,6 @@
+requests==2.25.1
+beautifulsoup4==4.9.3
+fuzzywuzzy==0.18.0
+openpyxl==3.0.7
+pymongo==3.11.4
+selenium==3.141.0

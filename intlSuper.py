@@ -1,10 +1,10 @@
-import requests, accessDB, core, convertoxl
+import requests, accessDB, core, convertoxl, certifi
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 from espncricinfo.match import Match
 
 headers={"User-Agent":"Mozilla/5.0(WindowsNT10.0;Win64;x64)AppleWebKit/537.36(KHTML,likeGecko)Chrome/58.0.3029.110Safari/537.36"}
-connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', tlsCAFile=certifi.where())
 db = connection['cricmanagerrecent']
 
 #307852 T20i

@@ -1,8 +1,8 @@
 import tkinter as tk
 from pymongo import MongoClient
-import via_gui_top
+import via_gui_top, certifi
 
-connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', tlsCAFile=certifi.where())
 db = connection['cricmanagerrecent']
 document = db['tokens']
 
@@ -10,6 +10,7 @@ document = db['tokens']
 
 root = tk.Tk()
 root.geometry("230x200")
+root.title("Cricket Data Engine")
 
 def all_children (refe) :
     _list = refe.winfo_children()

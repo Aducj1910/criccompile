@@ -1,4 +1,4 @@
-import pymongo, json, unicodedata, json
+import pymongo, json, unicodedata, json, certifi
 from pymongo import MongoClient
 
 # connection = MongoClient('localhost', 27017)
@@ -11,7 +11,7 @@ from pymongo import MongoClient
 # document.insert_one(post)
 
 # connection = MongoClient('localhost', 27017)
-connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+connection = MongoClient('mongodb+srv://admin:21441@cluster0.7y5hx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', tlsCAFile=certifi.where())
 
 def addRow(rows, switch, infoRows):
 	# print(rows)
